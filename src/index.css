@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: sans-serif;
   height: 100vh;
 }
 
-#root{
+#root {
   height: 100%;
   width: 100%;
   /* border: 1px dashed blue; */
@@ -19,16 +19,16 @@ body{
   background-color: #222;
 }
 
-.App{
+.App {
   /* border: 1px black solid; */
   width: min(550px, 100%);
   background-color: #444;
 }
 
-.display{
+.display {
   /* border: 1px red solid; */
   height: 3rem;
-  background-color:#a48888;
+  background-color: #a48888;
   width: 500px;
   margin: 0.5rem auto;
   padding: 0.5rem;
@@ -36,9 +36,10 @@ body{
   display: flex;
   align-items: center;
   color: #d3d3d3;
+  transition: all 0.5s ease;
 }
 
-.input-container{
+.input-container {
   width: 500px;
   overflow-x: auto;
   /* border: 1px black solid; */
@@ -54,21 +55,24 @@ body{
 .button {
   font-size: 1.5rem;
   color: antiquewhite;
-  background-color:#1d2c3a; 
+  background-color: #1d2c3a;
   display: grid;
   place-content: center;
 }
 
-.equals-button{
+.equals-button {
   grid-column: 1/5;
 
 }
 
-.App, .button, .display, .input-container{
+.App,
+.button,
+.display,
+.input-container {
   border-radius: 15px;
 }
 
-.App__h1{
+.App__h1 {
   text-align: center;
   text-transform: uppercase;
   font-family: monospace;

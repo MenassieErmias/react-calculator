@@ -4,31 +4,31 @@ import { useState } from "react";
 
 function App() {
   // STATE
-  const [display, setDisplay]=useState("")
+  const [display, setDisplay] = useState("")
   // FUNCTIONS
-  const createDigits = () =>{
+  const createDigits = () => {
     const digits = [];
-    for(let i = 0 ; i <= 9; i++){
+    for (let i = 0; i <= 9; i++) {
       digits.push(<NumberInput digit={i} display={display} setDisplay={setDisplay} />)
     }
     return digits
   }
 
-  const clear = () =>{
+  const clear = () => {
     setDisplay('')
   }
 
   const backspace = () => {
-    setDisplay(prev=> prev.slice(0, prev.length-1))
+    setDisplay(prev => prev.slice(0, prev.length - 1))
   }
 
   const handleClick = (e) => {
-    setDisplay(prev=> prev+e.target.value)
+    setDisplay(prev => prev + e.target.value)
   }
 
   const handleEquals = () => {
     const trimmedEval = display.split(" ").join('');
-    setDisplay(eval(trimmedEval))
+    setDisplay(String(eval(trimmedEval)))
 
   }
   return (
@@ -38,16 +38,15 @@ function App() {
         {display}
       </div>
       <div className="input-container">
-          {createDigits()}
-          <button className="button" onClick={clear}>CE</button>
-          <button className="button" onClick={backspace}>&#x2190;</button>
-          <button className="button" onClick={handleClick} value={" + "}>+</button>
-          <button className="button" onClick={handleClick} value={" - "}>-</button>
-          <button className="button" onClick={handleClick} value={" * "}>*</button>
-          <button className="button" onClick={handleClick} value={" / "}>/</button>
-          <button className="equals-button button" onClick={handleEquals}> = </button>
+        {createDigits()}
+        <button className="button" onClick={clear}>CE</button>
+        <button className="button" onClick={backspace}>&#x2190;</button>
+        <button className="button" onClick={handleClick} value={" + "}>+</button>
+        <button className="button" onClick={handleClick} value={" - "}>-</button>
+        <button className="button" onClick={handleClick} value={" * "}>*</button>
+        <button className="button" onClick={handleClick} value={" / "}>/</button>
+        <button className="equals-button button" onClick={handleEquals}> = </button>
       </div>
-      
     </div>
   );
 }
